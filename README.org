@@ -1,0 +1,16 @@
+# python-assignment
+# python-assignment
+
+* Setup
+** Activate virtual environment
+#+BEGIN_SRC 
+source /venv/bin/activate
+#+END_SRC
+** Install Flask
+#+BEGIN_SRC 
+pip install Flask
+pip install requests
+sudo apt-get install python-requests
+snap install postman
+pip install pyjwt
+#+END_SRC
