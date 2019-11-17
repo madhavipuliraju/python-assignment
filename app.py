@@ -37,6 +37,7 @@ def token_required(f):
 	return decorated
 
 @app.route('/patch', methods=['PATCH'])
+@token_required
 def patch():
     json_object = request.json['json']
     if not json_object:
