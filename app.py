@@ -1,10 +1,10 @@
-from flask import Flask, request, make_response, jsonify
+from flask import Flask, request, make_response, jsonify, abort
 from flask import send_file
 import jwt
 import datetime
 from functools import wraps
 import logging
-import json, requests
+import json, requests, jsonpatch
 import glob
 from PIL import Image
 from io import BytesIO
@@ -17,7 +17,8 @@ app.logger.setLevel(logging.INFO)
 #app.logger.setLevel(logging.ERROR)
 
 app.config['SECRET_KEY'] = "this is the secret key"
-		
+
+
 def token_required(f):
 	@wraps(f)
 	def decorated(*args, **kwargs):
@@ -35,14 +36,29 @@ def token_required(f):
 		return f(*args, **kwargs)
 	return decorated
 
+@app.route('/patch', methods=['PATCH'])
+def patch():
+    json_object = request.json['json']
+    if not json_object:
+        app.logger.error('JSON object is missing in the payload')
+        return jsonify({'message': 'Key Error: json key is missing'}), 500
+
+    patch = request.json['patch']
+    if not patch:
+           app.logger.error('JSON patch object is missing in the payload' )
+           return jsonify({'message': 'Key Error: patch key is missing'}), 403
+
+    res = jsonpatch.apply_patch(json_object, patch)
+    return res
+
 @app.route('/thumbnail')
 @token_required
 def thumbnail():
 	url= request.args.get('url')
 	app.logger.info('Image url is %s' %url)
 	if not url:
-			app.logger.error('Image URL is missing' )
-			return jsonify({'message': 'Image URL is missing'}), 403
+	       app.logger.error('Image URL is missing' )
+	       return jsonify({'message': 'Image URL is missing'}), 403
 	response = requests.get(url)		
 	img = Image.open(BytesIO(response.content))
 	app.logger.info('image opened')
@@ -68,6 +84,6 @@ def login():
 	app.logger.error('Unauthorized. Please enter Username and Password to login')
 	return make_response('Un Authorized', 401, {'WWW-Authenticate':'Basic-realm="Login required!"'})
 
-
+    
 if __name__ == '__main__':
 	app.run(debug=True)

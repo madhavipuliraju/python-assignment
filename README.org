@@ -1,0 +1,38 @@
+# python-assignment
+# python-assignment
+
+** Installations
+#+BEGIN_EXAMPLE
+pip install Flask
+pip install requests
+pip install pyjwt
+pip install pillow
+pip install jsonpatch
+#+END_EXAMPLE
+** Setup
+1) Clone the repo from github
+#+BEGIN_EXAMPLE
+
+#+END_EXAMPLE
+2) Activate virtual environment
+#+BEGIN_EXAMPLE
+source venv/bin/activate
+#+END_EXAMPLE
+3) Run the application
+#+BEGIN_EXAMPLE
+python app.py
+#+END_EXAMPLE
+** Login
+#+BEGIN_EXAMPLE
+
+#+END_EXAMPLE
+** Thumbnail
+#+BEGIN_SRC 
+http://localhost:5000/thumbnail?token=<valid_token>&url=<image_public_url>
+#+END_SRC
+#+BEGIN_EXAMPLE
+http://localhost:5000/thumbnail?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZHNmYXNkZiIsImV4cCI6MTU3Mzk3NzA5N30.XHnn-znQpHMu4jEFMAE3elIXrP3DcDGxIjr9uq9YU_U&url=https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+#+END_EXAMPLE
+#+BEGIN_EXAMPLE
+thumbnail image will be returned
+#+END_EXAMPLE
