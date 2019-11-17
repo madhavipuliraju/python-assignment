@@ -4,6 +4,9 @@ import datetime
 from functools import wraps
 import logging
 import json
+import glob
+from PIL import Image
+
 
 app = Flask(__name__)
 
@@ -31,10 +34,18 @@ def token_required(f):
 		return f(*args, **kwargs)
 	return decorated
 
-@app.route('/protected')
+@app.route('/thumbnail')
 @token_required
-def protected():
-	return 'protected'
+def thumbnail():
+	for infile in glob.glob("*.jpg"):
+  		im = Image.open(infile)
+  		im = im.convert("RGB")
+  		# convert to thumbnail image
+  		im.thumbnail((50, 50), Image.ANTIALIAS)
+  		# don't save if thumbnail already exists
+  		if infile[0:2] != "T_":
+  			im.save("T_" + infile, "JPEG")
+			return 'Thumbnail created'
 
 @app.route('/login')
 def login():

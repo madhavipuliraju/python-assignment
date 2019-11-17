@@ -13,4 +13,5 @@ pip install requests
 sudo apt-get install python-requests
 snap install postman
 pip install pyjwt
+pip install pillow
 #+END_SRC
