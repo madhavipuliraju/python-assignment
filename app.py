@@ -46,8 +46,8 @@ def patch():
 
     patch = request.json['patch']
     if not patch:
-           app.logger.error('JSON patch object is missing in the payload' )
-           return jsonify({'message': 'Key Error: patch key is missing'}), 403
+        app.logger.error('JSON patch object is missing in the payload' )
+        return jsonify({'message': 'Key Error: patch key is missing'}), 403
 
     res = jsonpatch.apply_patch(json_object, patch)
     return res
@@ -58,8 +58,8 @@ def thumbnail():
 	url= request.args.get('url')
 	app.logger.info('Image url is %s' %url)
 	if not url:
-	       app.logger.error('Image URL is missing' )
-	       return jsonify({'message': 'Image URL is missing'}), 403
+	    app.logger.error('Image URL is missing' )
+	    return jsonify({'message': 'Image URL is missing'}), 403
 	response = requests.get(url)		
 	img = Image.open(BytesIO(response.content))
 	app.logger.info('image opened')
