@@ -319,3 +319,21 @@ Unauthorized. Please enter Username and Password to login
 authentication sucessful
 token is eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGVzdHVzZXIiLCJleHAiOjE1NzQwNjQzMTJ9.Xw4SUNDoQxfLlzLDhSwW6nRGR2-kxPCQxmgnRdpMU7k
 Data after decode: {"user": "testuser", "exp": 1574064312}
+token is eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoidGVzdCIsImV4cCI6MTU3NDA2ODgxM30.CvJIAtVSXLUgEI7ouxRAHcwG4wrTuT2Y0E2i-lyCtww
+Data after decode: {"user": "test", "exp": 1574068813}
+Image url is https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+image opened
+image converted to RGB
+image size converted to 50*50
+token is eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoidGVzdCIsImV4cCI6MTU3NDA2ODgxM30.CvJIAtVSXLUgEI7ouxRAHcwG4wrTuT2Y0E2i-lyCtww
+Data after decode: {"user": "test", "exp": 1574068813}
+Image url is https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+image opened
+image converted to RGB
+image size converted to 50*50
+authentication sucessful
+token is eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGVzdCIsImV4cCI6MTU3NDA1NTYyOX0.KX-WRUXOG3ixTXHQxUHtvfxY5Uoe22MXvF2LnCOPvx8
+Invalid Token
+authentication sucessful
+token is eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoidGVzdCIsImV4cCI6MTU3NDA2OTk5Mn0.SRj41UNI_4QZ3TRYRguL_5DqJmdpidSa55rbaIQTB2Y
+Data after decode: {"user": "test", "exp": 1574069992}

@@ -1,4 +1,4 @@
-#!/home/vlead/projects/python3-assignment/venv/bin/python
+#!/home/vlead/projects/python-assignment/venv/bin/python
 
 import sys
 import getopt
