@@ -66,10 +66,9 @@ def thumbnail():
 	im = img.convert('RGB')
 	app.logger.info('image converted to RGB')
   	# convert to thumbnail image
-  	im.thumbnail((50, 50), Image.ANTIALIAS)
-  	app.logger.info('image size converted to 50*50')
-  	# don't save if thumbnail already exists
-  	im.save('thumbnail', "JPEG")
+	im.thumbnail((50, 50), Image.ANTIALIAS)
+	app.logger.info('image size converted to 50*50')
+	im.save('thumbnail', "JPEG")
 	return send_file("thumbnail", mimetype='image/jpeg')
 	
 

@@ -97,7 +97,7 @@ http://localhost:5000/thumbnail?token=<valid_token>&url=<image_public_url>
 #+END_SRC
 Sample Request:
 #+BEGIN_EXAMPLE
-http://localhost:5000/thumbnail?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZHNmYXNkZiIsImV4cCI6MTU3Mzk3NzA5N30.XHnn-znQpHMu4jEFMAE3elIXrP3DcDGxIjr9uq9YU_U&url=https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+http://localhost:5000/thumbnaieyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGVzdCIsImV4cCI6MTU3NDA1NjEwOH0.cvUnwSsfeymWd3ngvs-YbstllzW3GJcJxkmbsNxExXw&url=https://homepages.cae.wisc.edu/~ece533/images/airplane.png
 #+END_EXAMPLE
 Output:
 #+BEGIN_EXAMPLE
