@@ -84,16 +84,13 @@ Method:
 #+BEGIN_EXAMPLE
 GET
 #+END_EXAMPLE
-#+BEGIN_EXAMPLE
-thumbnail?token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZHNmYXNkZiIsImV4cCI6MTU3Mzk5NDI3MH0.6Kdriqe-lxA6PFNCvD6UQhHXUqGxxF90CbTErw4ZWPQ&url=https://homepages.cae.wisc.edu/~ece533/images/airplane.png
-#+END_EXAMPLE
 Syntax:
 #+BEGIN_SRC 
 http://localhost:5000/thumbnail?token=<valid_token>&url=<image_public_url>
 #+END_SRC
 Sample Request:
 #+BEGIN_EXAMPLE
-http://localhost:5000/thumbnaieyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGVzdCIsImV4cCI6MTU3NDA1NjEwOH0.cvUnwSsfeymWd3ngvs-YbstllzW3GJcJxkmbsNxExXw&url=https://homepages.cae.wisc.edu/~ece533/images/airplane.png
+http://localhost:5000/thumbnail?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGVzdCIsImV4cCI6MTU3NDA1NjEwOH0.cvUnwSsfeymWd3ngvs-YbstllzW3GJcJxkmbsNxExXw&url=https://homepages.cae.wisc.edu/~ece533/images/airplane.png
 #+END_EXAMPLE
 Output:
 #+BEGIN_EXAMPLE
