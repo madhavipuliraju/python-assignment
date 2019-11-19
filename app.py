@@ -1,6 +1,6 @@
 from flask import Flask
 from api import api
-import logging
+import logging, os
 
 
 def create_app():
@@ -8,6 +8,7 @@ def create_app():
     app.secret_key = "this is the secret key"
     app.register_blueprint(api)
     file_handler = logging.FileHandler('app.log')
+    os.chmod('app.log', 0o777)
     app.logger.addHandler(file_handler)
     app.logger.setLevel(logging.INFO)
     return app

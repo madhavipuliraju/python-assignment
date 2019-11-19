@@ -10,11 +10,11 @@ source venv/bin/activate
 #+END_EXAMPLE
 - Installations
 #+BEGIN_EXAMPLE
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 #+END_EXAMPLE
 - Run the application
 #+BEGIN_EXAMPLE
-python app.py
+python3 app.py
 #+END_EXAMPLE
 * Tasks
 ** Login
