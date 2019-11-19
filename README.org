@@ -101,10 +101,11 @@ thumbnail image will be returned
 python3 test_app.py
 #+END_SRC
 * Docker
-  
+- Pull the docker image from dockerhub
 #+BEGIN_SRC 
-docker build -t python-assignment:latest .
+docker pull madhavipuliraju/python-assignment:latest
 #+END_SRC
+- Run the application using following command
 #+BEGIN_SRC 
-docker run -p5000:5000 python-assignment:latest
+docker run -p5000:5000 madhavipuliraju/python-assignment
 #+END_SRC
