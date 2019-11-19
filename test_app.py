@@ -48,7 +48,7 @@ class TestImage(TestCase):
 
     def runTest(self):
         thumb_url = 'http://localhost:5000/thumbnail?token='+ self.token + '&url=' + self.image_url
-        response1 = requests.get(thumb_url)
+        response1 = self.client.get(thumb_url)
         self.assertEqual(response1.status_code, 200)
 
 class TestPatch(TestCase):
@@ -79,14 +79,14 @@ class TestPatch(TestCase):
                    ]
                 }
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-        response = requests.patch(patch_url, data=json.dumps(data), headers=headers)
+        response = self.client.patch(patch_url, data=json.dumps(data), headers=headers)
         str = {
              "baz": "boo", 
              "hello": [
              "world"
            ]
           }
-        self.assertEqual(json.loads(response.text), str)
+        self.assertEqual(json.loads(response.data), str)
         self.assertEqual(response.status_code, 200)
 
 class TestInvalidToken(TestCase):
@@ -102,7 +102,7 @@ class TestInvalidToken(TestCase):
 
     def runTest(self):
         thumb_url = 'http://localhost:5000/thumbnail?token='+ self.token + '&url=' + self.image_url
-        response1 = requests.get(thumb_url)
+        response1 = self.client.get(thumb_url)
         self.assertEqual(response1.status_code, 403)
         
 suite = unittest.TestSuite()
