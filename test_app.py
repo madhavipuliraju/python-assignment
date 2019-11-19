@@ -88,6 +88,22 @@ class TestPatch(TestCase):
           }
         self.assertEqual(json.loads(response.text), str)
         self.assertEqual(response.status_code, 200)
+
+class TestInvalidToken(TestCase):
+
+    def create_app(self):
+        app = create_app()
+        return app
+                  
+    def setUp(self):  
+        self.image_url = 'https://homepages.cae.wisc.edu/~ece533/images/airplane.png'
+        self.token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidGVzdCIsImV4cCI6MTU3Mzk5MzkxOX0.KaQgR3af_mm3nQffqD8cG91JNz7pKZUEebngp2Qt0xM'
+        return self.token
+
+    def runTest(self):
+        thumb_url = 'http://localhost:5000/thumbnail?token='+ self.token + '&url=' + self.image_url
+        response1 = requests.get(thumb_url)
+        self.assertEqual(response1.status_code, 403)
         
 suite = unittest.TestSuite()
 
