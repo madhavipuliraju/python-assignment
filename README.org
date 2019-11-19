@@ -1,19 +1,18 @@
 # python-assignment
-
-* Installations
-#+BEGIN_EXAMPLE
-pip install -r requirements.txt
-#+END_EXAMPLE
 * Setup
-1) Clone the repo from github
+- Clone the repo from github
 #+BEGIN_EXAMPLE
 git clone https://github.com/madhavipuliraju/python-assignment.git
 #+END_EXAMPLE
-2) Activate virtual environment
+- Activate virtual environment
 #+BEGIN_EXAMPLE
 source venv/bin/activate
 #+END_EXAMPLE
-3) Run the application
+- Installations
+#+BEGIN_EXAMPLE
+pip install -r requirements.txt
+#+END_EXAMPLE
+- Run the application
 #+BEGIN_EXAMPLE
 python app.py
 #+END_EXAMPLE
@@ -97,3 +96,7 @@ Output:
 thumbnail image will be returned
 #+END_EXAMPLE
 
+* TestCases
+#+BEGIN_SRC 
+python3 test_app.py
+#+END_SRC
