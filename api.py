@@ -51,9 +51,9 @@ def patch():
 @api.route('/thumbnail')
 @token_required
 def thumbnail():
-	url= request.args.get('url')
-	current_app.logger.info('Image url is %s' %url)
-	if not url:
+        url= request.args.get('url')
+        current_app.logger.info('Image url is %s' %url)
+    	if not url:
 	    current_app.logger.error('Image URL is missing' )
 	    return jsonify({'message': 'Image URL is missing'}), 403
 	response = requests.get(url)		
@@ -80,3 +80,6 @@ def login():
 	current_app.logger.error('Unauthorized. Please enter Username and Password to login')
 	return make_response('Un Authorized', 401, {'WWW-Authenticate':'Basic-realm="Login required!"'})
 
+@api.route('/')
+def deployment():
+        return jsonify({"message": "Hello World!"})
