@@ -120,3 +120,7 @@ docker pull madhavipuliraju/python-assignment:latest
 #+BEGIN_SRC 
 docker run -p5000:5000 madhavipuliraju/python-assignment
 #+END_SRC
+* Deployment using zappa  
+#+BEGIN_SRC 
+https://3kmpfi31jc.execute-api.ap-south-1.amazonaws.com/dev/
+#+END_SRC
