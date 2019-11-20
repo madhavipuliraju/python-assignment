@@ -1,5 +1,13 @@
+#+TITLE: Python Assignment
+#+AUTHOR: Madhvi Puliraju
+#+DATE: [2019-11-16 Sat]
+
+* Introduction
+  This document captures the instructions to setup, install
+  and run the application given in the [[https://docs.google.com/document/d/14ijKjLmy-E4qJFEbr4m_xcnyomOY1AeobehVGS4sKnY/edit][assignment]].
+
 # python-assignment
-* Setup
+* Setup and Run the Application on Development Environment
 - Clone the repo from github
 #+BEGIN_EXAMPLE
 git clone https://github.com/madhavipuliraju/python-assignment.git
@@ -18,6 +26,7 @@ pip3 install -r requirements.txt
 #+BEGIN_EXAMPLE
 python3 app.py
 #+END_EXAMPLE
+- Go to the browser and access =localhost:5000=
 * Tasks
 ** Login
 Method
