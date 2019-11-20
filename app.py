@@ -12,7 +12,7 @@ def create_app():
     os.chmod(log_file, 0o777)
     file_handler = logging.FileHandler(log_file)
     app.logger.addHandler(file_handler)
-    app.logger.setLevel(logging.INFO)
+    app.logger.setLevel(logging.ERROR)
     return app
 
 if __name__ == '__main__':
