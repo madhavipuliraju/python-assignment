@@ -7,10 +7,10 @@ def create_app():
     app = Flask(__name__)
     app.secret_key = "this is the secret key"
     app.register_blueprint(api)
-    cwd = os.getcwd()
-    log_file = cwd + '/app.log'
-#    os.chmod(log_file, 0o777)
-    file_handler = logging.FileHandler(log_file)
+  #  cwd = os.getcwd()
+  #  log_file = cwd + '/app.log'
+  #    os.chmod(log_file, 0o777)
+    file_handler = logging.FileHandler('app.log')
     app.logger.addHandler(file_handler)
     app.logger.setLevel(logging.ERROR)
     return app
