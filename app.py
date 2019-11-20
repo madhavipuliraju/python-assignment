@@ -10,7 +10,7 @@ def create_app():
   #  cwd = os.getcwd()
   #  log_file = cwd + '/app.log'
   #    os.chmod(log_file, 0o777)
-    file_handler = logging.FileHandler('app.log')
+    file_handler = logging.FileHandler('/tmp/app.log')
     app.logger.addHandler(file_handler)
     app.logger.setLevel(logging.ERROR)
     return app
