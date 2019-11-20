@@ -6,6 +6,8 @@ git clone https://github.com/madhavipuliraju/python-assignment.git
 #+END_EXAMPLE
 - Activate virtual environment
 #+BEGIN_EXAMPLE
+pip3 install virtualenv
+virtualenv -p python3 venv
 source venv/bin/activate
 #+END_EXAMPLE
 - Installations
