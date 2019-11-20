@@ -51,21 +51,20 @@ def patch():
 @api.route('/thumbnail')
 @token_required
 def thumbnail():
-        url= request.args.get('url')
-        current_app.logger.info('Image url is %s' %url)
-    	if not url:
-	    current_app.logger.error('Image URL is missing' )
-	    return jsonify({'message': 'Image URL is missing'}), 403
-	response = requests.get(url)		
-	img = Image.open(BytesIO(response.content))
-	current_app.logger.info('image opened')
-	im = img.convert('RGB')
-	current_app.logger.info('image converted to RGB')
-  	# convert to thumbnail image
-	im.thumbnail((50, 50), Image.ANTIALIAS)
-	current_app.logger.info('image size converted to 50*50')
-	im.save('thumbnail', "JPEG")
-	return send_file("thumbnail", mimetype='image/jpeg')
+    url= request.args.get('url')
+    current_app.logger.info('Image url is %s' %url)
+    if not url:
+    	current_app.logger.error('Image URL is missing')
+    	return jsonify({'message': 'Image URL is missing'}), 403
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    current_app.logger.info('image opened')
+    im = img.convert('RGB')
+    current_app.logger.info('image converted to RGB')# convert to thumbnail image
+    im.thumbnail((50, 50), Image.ANTIALIAS)
+    current_app.logger.info('image size converted to 50*50')
+    im.save('thumbnail', "JPEG")
+    return send_file("thumbnail", mimetype='image/jpeg')
 	
 
 @api.route('/login')
@@ -82,4 +81,4 @@ def login():
 
 @api.route('/')
 def deployment():
-        return jsonify({"message": "Hello World!"})
+    return jsonify({"message": "Deployment sucessful"})
