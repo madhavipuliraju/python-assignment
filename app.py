@@ -9,7 +9,7 @@ def create_app():
     app.register_blueprint(api)
     cwd = os.getcwd()
     log_file = cwd + '/app.log'
-    os.chmod(log_file, 0o777)
+#    os.chmod(log_file, 0o777)
     file_handler = logging.FileHandler(log_file)
     app.logger.addHandler(file_handler)
     app.logger.setLevel(logging.ERROR)
