@@ -124,3 +124,7 @@ docker run -p5000:5000 madhavipuliraju/python-assignment
 #+BEGIN_SRC 
 https://3kmpfi31jc.execute-api.ap-south-1.amazonaws.com/dev/
 #+END_SRC
+* Jenkins 
+#+BEGIN_SRC 
+http://13.232.236.17:8080
+#+END_SRC
